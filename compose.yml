@@ -10,6 +10,9 @@ services:
         fabric-api
         fabricproxy-lite
         simple-voice-chat
+        life-series
+      OPS: |
+        cheesemany
     volumes:
       - ./volumes/secretlife_data:/data
 
