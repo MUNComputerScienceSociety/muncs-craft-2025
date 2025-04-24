@@ -6,3 +6,10 @@ not really meant for contribs since this is basically just a place for me to put
 
 but, it might be useful to you :)
 
+---
+
+technical notes:
+
+while setting up simple voice chat, i had my port mappings setup to map 25577 inside the container to 25565, which i _think_ then basically reported to simple voice chat to make clients connect to 25577 for voice chat packets, which would fail to work obviously!
+
+velocity is fine with just being put on 25565, i opted for that, and then voice chat started working, even though the internal server doesn't expose itself on any ports, yay
