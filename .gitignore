@@ -1,0 +1,4 @@
+volumes/secretlife_data/*
+!volumes/secretlife_data/config/FabricProxy-Lite.toml
+
+volumes/proxy_data

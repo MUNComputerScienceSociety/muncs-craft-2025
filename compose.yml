@@ -1,0 +1,25 @@
+services:
+  secretlife:
+    image: itzg/minecraft-server:java24
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+      ONLINE_MODE: "FALSE"
+      VERSION: "1.21.4"
+      MODRINTH_PROJECTS: "fabricproxy-lite"
+    volumes:
+      - ./volumes/secretlife_data:/data
+
+  proxy:
+    image: itzg/mc-proxy:java24
+    environment:
+      TYPE: "VELOCITY"
+      DEBUG: "false"
+      ENABLE_RCON: "true"
+      MINECRAFT_VERSION: "1.21.4"
+    ports:
+      - "25565:25577"
+    volumes:
+      - ./velocity.toml:/config/velocity.toml:ro
+      - ./forwarding.secret:/config/forwarding.secret:ro
+      - ./volumes/proxy_data:/server
