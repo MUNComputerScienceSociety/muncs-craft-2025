@@ -6,7 +6,10 @@ services:
       TYPE: "FABRIC"
       ONLINE_MODE: "FALSE"
       VERSION: "1.21.4"
-      MODRINTH_PROJECTS: "fabricproxy-lite"
+      MODRINTH_PROJECTS: |
+        fabric-api
+        fabricproxy-lite
+        simple-voice-chat
     volumes:
       - ./volumes/secretlife_data:/data
 
@@ -17,8 +20,11 @@ services:
       DEBUG: "false"
       ENABLE_RCON: "true"
       MINECRAFT_VERSION: "1.21.4"
+      MODRINTH_PROJECTS: |
+        simple-voice-chat:velocity-2.5.30
     ports:
-      - "25565:25577"
+      - "25565:25565/tcp"
+      - "25565:25565/udp"
     volumes:
       - ./velocity.toml:/config/velocity.toml:ro
       - ./forwarding.secret:/config/forwarding.secret:ro
