@@ -1,5 +1,5 @@
-volumes/secretlife_data/*
-!volumes/secretlife_data/config/FabricProxy-Lite.toml
+volumes/survival_data/*
+!volumes/survival_data/config/FabricProxy-Lite.toml
 
 volumes/proxy_data
 

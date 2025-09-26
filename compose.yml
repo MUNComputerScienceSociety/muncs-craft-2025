@@ -1,20 +1,19 @@
 services:
-  secretlife:
+  survival:
     image: itzg/minecraft-server:java24
     environment:
       EULA: "TRUE"
       TYPE: "FABRIC"
       ONLINE_MODE: "FALSE"
-      VERSION: "1.21.4"
+      VERSION: "1.21.8"
       MODRINTH_PROJECTS: |
         fabric-api
         fabricproxy-lite
         simple-voice-chat
-        life-series
       OPS: |
         cheesemany
     volumes:
-      - ./volumes/secretlife_data:/data
+      - ./volumes/survival_data:/data
 
   proxy:
     image: itzg/mc-proxy:java24
@@ -22,9 +21,9 @@ services:
       TYPE: "VELOCITY"
       DEBUG: "false"
       ENABLE_RCON: "true"
-      MINECRAFT_VERSION: "1.21.4"
+      MINECRAFT_VERSION: "1.21.8"
       MODRINTH_PROJECTS: |
-        simple-voice-chat:velocity-2.5.30
+        simple-voice-chat:velocity-2.6.4
     ports:
       - "25565:25565/tcp"
       - "25565:25565/udp"
@@ -32,3 +31,4 @@ services:
       - ./velocity.toml:/config/velocity.toml:ro
       - ./forwarding.secret:/config/forwarding.secret:ro
       - ./volumes/proxy_data:/server
+
