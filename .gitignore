@@ -4,3 +4,5 @@ volumes/survival_data/*
 volumes/proxy_data
 
 tmp
+
+*.swp

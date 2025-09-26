@@ -6,10 +6,14 @@ services:
       TYPE: "FABRIC"
       ONLINE_MODE: "FALSE"
       VERSION: "1.21.8"
+      ENABLE_WHITELIST: "TRUE"
+      SPAWN_PROTECTION: "32"
       MODRINTH_PROJECTS: |
         fabric-api
         fabricproxy-lite
         simple-voice-chat
+        sleep
+        factions
       OPS: |
         cheesemany
     volumes:
